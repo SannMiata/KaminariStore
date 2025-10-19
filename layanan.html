@@ -1,147 +1,68 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kaminari Store</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* sedikit tweak untuk efek glow yang konsisten */
-    .neon-text {
-      text-shadow: 0 0 10px rgba(0,191,255,0.9), 0 0 30px rgba(0,191,255,0.25);
-    }
-    .neon-border {
-      box-shadow: 0 0 30px rgba(0,191,255,0.18), inset 0 0 30px rgba(0,191,255,0.05);
-      border: 1px solid rgba(0,191,255,0.08);
-    }
-    /* buat scroll halus untuk mobile */
-    html { scroll-behavior: smooth; }
-  </style>
-</head>
-<body class="bg-gradient-to-b from-gray-900 via-black to-gray-950 text-white min-h-screen font-sans">
-
-  <!-- HEADER -->
-  <header class="fixed top-0 left-0 w-full z-50">
-    <div class="mx-auto max-w-5xl px-4">
-      <div class="flex items-center justify-between py-3 bg-black/60 backdrop-blur-sm neon-border rounded-b-lg">
-        <div class="flex items-center gap-3">
-          <!-- gunakan link raw file dari GitHub (ganti jika file ada di tempat lain) -->
-          <img
-            src="https://raw.githubusercontent.com/SannMiata/Kaminari/main/Kaminari%20E-%20Commerce%20.jpg"
-            alt="Logo Kaminari"
-            class="w-10 h-10 rounded-full border border-cyan-400/40 shadow-md object-cover"
-            onerror="this.src='logo.png'"
-          >
-          <span class="text-cyan-400 text-lg md:text-xl font-bold neon-text">Kaminari Store</span>
-        </div>
-
-        <!-- opsional: bisa taruh tombol menu atau link di sebelah kanan -->
-        <nav class="hidden md:flex gap-6 items-center text-sm">
-          <a href="#home" class="text-gray-200 hover:text-cyan-300">Home</a>
-          <a href="layanan.html" class="text-gray-200 hover:text-cyan-300">Layanan</a>
-          <a href="#contact" class="text-gray-200 hover:text-cyan-300">Contact</a>
-        </nav>
-      </div>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <main id="home" class="relative flex items-center justify-center min-h-screen pt-24 px-4">
-    <!-- background overlay tipis supaya tidak terlalu gelap -->
-    <div class="absolute inset-0 bg-black/40"></div>
-
-    <!-- kartu tengah yang gayanya mirip halaman 2 -->
-    <div class="relative z-10 w-full max-w-3xl">
-      <div class="bg-[#1b1e2a]/80 neon-border rounded-2xl p-8 md:p-12 shadow-2xl">
-        <!-- logo besar -->
-        <div class="flex justify-center mb-6">
-          <img
-            src="https://raw.githubusercontent.com/SannMiata/Kaminari/main/Kaminari%20E-%20Commerce%20.jpg"
-            alt="Logo Besar Kaminari"
-            class="w-28 h-28 md:w-36 md:h-36 rounded-full border-2 border-cyan-500/30 shadow-lg object-cover"
-            onerror="this.src='logo.png'"
-          />
-        </div>
-
-        <!-- judul -->
-        <h1 class="text-center text-3xl md:text-4xl font-extrabold text-cyan-400 neon-text mb-4">
-          Kaminari Store
-        </h1>
-
-        <!-- deskripsi -->
-        <p class="text-center text-gray-300 max-w-xl mx-auto mb-8 leading-relaxed">
-          Top Up, Design, Networking — Cepat, Aman, dan Berkualitas Tinggi
-        </p>
-
-        <!-- tombol utama -->
-        <div class="flex justify-center">
-          <a href="layanan.html"
-             class="bg-cyan-500 hover:bg-cyan-600 text-black font-semibold px-6 md:px-10 py-3 rounded-full shadow-lg transition transform hover:scale-105">
-            Jelajahi Layanan Kami
-          </a>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <!-- footer kecil (opsional) -->
-  <footer id="contact" class="relative z-10 mt-10 pb-8">
-    <div class="max-w-5xl mx-auto px-4 text-center text-gray-400 text-sm">
-      &copy; <span id="year"></span> Kaminari Store — All rights reserved.
-    </div>
-  </footer>
-
-  <script>
-    // set tahun footer otomatis
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-    </html>        <p class="text-center text-gray-300 max-w-xl mx-auto mb-8 leading-relaxed">
-          Top Up, Design, Networking — Cepat, Aman, dan Berkualitas Tinggi
-        </p>
-
-        <div class="flex justify-center">
-          <a href="layanan.html"
-             class="bg-cyan-500 hover:bg-cyan-600 text-black font-semibold px-6 md:px-10 py-3 rounded-full shadow-lg transition transform hover:scale-105">
-            Jelajahi Layanan Kami
-          </a>
-        </div>
-      </div>
-    </div>
-  </main>
-
-  <!-- FOOTER -->
-  <footer id="contact" class="relative z-10 mt-10 pb-8">
-    <div class="max-w-5xl mx-auto px-4 text-center text-gray-400 text-sm">
-      &copy; <span id="year"></span> Kaminari Store — All rights reserved.
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>  z-index: 0;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Layanan - Kaminari Store</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#0f0f23,#1a1a2e);
+  color:#fff;overflow-x:hidden;text-align:center;padding-top:90px;
 }
-@keyframes glowPulse {
-  0%, 100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
-  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+header{
+  display:flex;align-items:center;justify-content:center;
+  gap:10px;padding:15px 0;background:rgba(0,0,0,0.8);
+  box-shadow:0 0 20px #00BFFF;position:fixed;top:0;width:100%;z-index:10;
+}
+header img{width:40px;height:40px;border-radius:50%;}
+header h1{color:#00BFFF;text-shadow:0 0 10px #00BFFF;font-size:1.5em;}
+.services{max-width:1100px;margin:auto;padding:40px 20px;}
+.service-card{
+  background:rgba(255,255,255,0.1);padding:35px 25px;margin-bottom:30px;
+  border-radius:12px;box-shadow:0 0 15px rgba(0,191,255,0.4);
+  transition:transform .3s ease;
+}
+.service-card:hover{transform:translateY(-8px);}
+.service-card h2{color:#00BFFF;margin-bottom:10px;font-size:1.8em;}
+.service-card p{color:#ddd;font-size:1em;line-height:1.5;}
+.btn{
+  background:#00BFFF;color:#000;padding:12px 30px;border-radius:8px;
+  font-weight:600;text-decoration:none;transition:0.3s;cursor:pointer;
+}
+.btn:hover{background:#0099ff;transform:scale(1.05);}
+.socials a img{width:40px;height:40px;transition:0.3s;}
+.socials a img:hover{transform:scale(1.1);}
+
+/* === Popup (Modal) === */
+.modal {
+  display: none; /* disembunyikan dulu */
+  position: fixed;
+  z-index: 100;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background: rgba(20,20,40,0.95);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 20px #00BFFF;
+}
+.modal h2 {
+  color: #00BFFF;
+  margin-bottom: 20px;
 }
 .modal .socials {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  z-index: 1;
-  position: relative;
-}
-.modal .socials a img{
-  width:60px;height:60px;
-  transition:0.3s;
-  filter:drop-shadow(0 0 10px #00BFFF);
-}
-.modal .socials a img:hover{
-  transform:scale(1.15);
-  filter:drop-shadow(0 0 20px #00BFFF);
+  gap: 25px;
+  margin-top: 10px;
 }
 .close {
   position: absolute;
@@ -150,14 +71,8 @@
   font-size: 28px;
   color: #fff;
   cursor: pointer;
-  z-index: 2;
 }
 .close:hover { color: #00BFFF; }
-
-@keyframes fadeIn {
-  from {transform: scale(0.9); opacity: 0;}
-  to {transform: scale(1); opacity: 1;}
-}
 </style>
 </head>
 <body>
@@ -185,10 +100,11 @@
   <button class="btn" id="openModal">Hubungi Kami Sekarang</button>
 </section>
 
-<!-- POPUP -->
+<!-- === POPUP === -->
 <div id="contactModal" class="modal">
   <div class="modal-content">
     <span class="close" id="closeModal">&times;</span>
+    <h2>Duarr</h2>
     <div class="socials">
       <a href="https://www.instagram.com/_sannqc?igsh=MXRkN2xpdTNqZWcyaA==" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
@@ -202,15 +118,29 @@
     </div>
   </div>
 </div>
-<body>
+
 <script>
+  // ambil elemen
   const modal = document.getElementById('contactModal');
   const btn = document.getElementById('openModal');
   const close = document.getElementById('closeModal');
 
-  btn.onclick = () => modal.style.display = 'flex';
-  close.onclick = () => modal.style.display = 'none';
-  window.onclick = e => { if (e.target == modal) modal.style.display = 'none'; }
+  // buka popup
+  btn.onclick = function() {
+    modal.style.display = 'flex';
+  }
+
+  // tutup popup
+  close.onclick = function() {
+    modal.style.display = 'none';
+  }
+
+  // klik di luar popup -> tutup juga
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = 'none';
+    }
+  }
 </script>
 </body>
-      </html>
+  </html>
