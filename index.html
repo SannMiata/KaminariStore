@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kaminari Store</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* sedikit tweak untuk efek glow yang konsisten */
+    .neon-text {
+      text-shadow: 0 0 10px rgba(0,191,255,0.9), 0 0 30px rgba(0,191,255,0.25);
+    }
+    .neon-border {
+      box-shadow: 0 0 30px rgba(0,191,255,0.18), inset 0 0 30px rgba(0,191,255,0.05);
+      border: 1px solid rgba(0,191,255,0.08);
+    }
+    /* buat scroll halus untuk mobile */
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-gray-900 via-black to-gray-950 text-white min-h-screen font-sans">
+
+  <!-- HEADER -->
+  <header class="fixed top-0 left-0 w-full z-50">
+    <div class="mx-auto max-w-5xl px-4">
+      <div class="flex items-center justify-between py-3 bg-black/60 backdrop-blur-sm neon-border rounded-b-lg">
+        <div class="flex items-center gap-3">
+          <!-- gunakan link raw file dari GitHub (ganti jika file ada di tempat lain) -->
+          <img
+            src="https://raw.githubusercontent.com/SannMiata/Kaminari/main/Kaminari%20E-%20Commerce%20.jpg"
+            alt="Logo Kaminari"
+            class="w-10 h-10 rounded-full border border-cyan-400/40 shadow-md object-cover"
+            onerror="this.src='logo.png'"
+          >
+          <span class="text-cyan-400 text-lg md:text-xl font-bold neon-text">Kaminari Store</span>
+        </div>
+
+        <!-- opsional: bisa taruh tombol menu atau link di sebelah kanan -->
+        <nav class="hidden md:flex gap-6 items-center text-sm">
+          <a href="#home" class="text-gray-200 hover:text-cyan-300">Home</a>
+          <a href="layanan.html" class="text-gray-200 hover:text-cyan-300">Layanan</a>
+          <a href="#contact" class="text-gray-200 hover:text-cyan-300">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="home" class="relative flex items-center justify-center min-h-screen pt-24 px-4">
+    <!-- background overlay tipis supaya tidak terlalu gelap -->
+    <div class="absolute inset-0 bg-black/40"></div>
+
+    <!-- kartu tengah yang gayanya mirip halaman 2 -->
+    <div class="relative z-10 w-full max-w-3xl">
+      <div class="bg-[#1b1e2a]/80 neon-border rounded-2xl p-8 md:p-12 shadow-2xl">
+        <!-- logo besar -->
+        <div class="flex justify-center mb-6">
+          <img
+            src="https://raw.githubusercontent.com/SannMiata/Kaminari/main/Kaminari%20E-%20Commerce%20.jpg"
+            alt="Logo Besar Kaminari"
+            class="w-28 h-28 md:w-36 md:h-36 rounded-full border-2 border-cyan-500/30 shadow-lg object-cover"
+            onerror="this.src='logo.png'"
+          />
+        </div>
+
+        <!-- judul -->
+        <h1 class="text-center text-3xl md:text-4xl font-extrabold text-cyan-400 neon-text mb-4">
+          Kaminari Store
+        </h1>
+
+        <!-- deskripsi -->
+        <p class="text-center text-gray-300 max-w-xl mx-auto mb-8 leading-relaxed">
+          Top Up, Design, Networking — Cepat, Aman, dan Berkualitas Tinggi
+        </p>
+
+        <!-- tombol utama -->
+        <div class="flex justify-center">
+          <a href="layanan.html"
+             class="bg-cyan-500 hover:bg-cyan-600 text-black font-semibold px-6 md:px-10 py-3 rounded-full shadow-lg transition transform hover:scale-105">
+            Jelajahi Layanan Kami
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- footer kecil (opsional) -->
+  <footer id="contact" class="relative z-10 mt-10 pb-8">
+    <div class="max-w-5xl mx-auto px-4 text-center text-gray-400 text-sm">
+      &copy; <span id="year"></span> Kaminari Store — All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // set tahun footer otomatis
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
