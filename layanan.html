@@ -4,21 +4,46 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Layanan - Kaminari Store</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<!-- Font Futuristik -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{
-  font-family:'Poppins',sans-serif;
+  font-family:'Orbitron',sans-serif;
   background:linear-gradient(135deg,#0f0f23,#1a1a2e);
   color:#fff;overflow-x:hidden;text-align:center;padding-top:90px;
 }
+
+/* ===== HEADER ===== */
 header{
   display:flex;align-items:center;justify-content:center;
-  gap:10px;padding:15px 0;background:rgba(0,0,0,0.8);
-  box-shadow:0 0 20px #00BFFF;position:fixed;top:0;width:100%;z-index:10;
+  gap:10px;padding:15px 0;background:rgba(0,0,0,0.85);
+  box-shadow:0 0 25px #00BFFF;position:fixed;top:0;width:100%;z-index:10;
 }
-header img{width:40px;height:40px;border-radius:50%;}
-header h1{color:#00BFFF;text-shadow:0 0 10px #00BFFF;font-size:1.5em;}
+header img{width:45px;height:45px;border-radius:50%;}
+
+/* ⚡ TEKS DENGAN EFEK GIF PETIR ⚡ */
+header h1{
+  font-size:2em;
+  font-weight:700;
+  background:url('https://i.gifer.com/3bZ.gif') repeat;
+  background-size:cover;
+  -webkit-background-clip:text;
+  color:transparent;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  animation: lightningMove 5s linear infinite;
+  text-shadow:0 0 25px rgba(0,255,255,0.3);
+}
+
+@keyframes lightningMove {
+  from { background-position: 0 0; }
+  to { background-position: 200% 0; }
+}
+
+/* ===== SECTION LAYANAN ===== */
 .services{max-width:1100px;margin:auto;padding:40px 20px;}
 .service-card{
   background:rgba(255,255,255,0.1);padding:35px 25px;margin-bottom:30px;
@@ -26,22 +51,93 @@ header h1{color:#00BFFF;text-shadow:0 0 10px #00BFFF;font-size:1.5em;}
   transition:transform .3s ease;
 }
 .service-card:hover{transform:translateY(-8px);}
-.service-card h2{color:#00BFFF;margin-bottom:10px;font-size:1.8em;}
-.service-card p{color:#ddd;font-size:1em;line-height:1.5;}
+.service-card h2{
+  color:#00BFFF;
+  margin-bottom:10px;
+  font-size:1.5em;
+  text-shadow:0 0 10px #00BFFF,0 0 30px #00BFFF;
+}
+.service-card p{
+  color:#ddd;font-size:1em;line-height:1.5;
+}
 .btn{
   background:#00BFFF;color:#000;padding:12px 30px;border-radius:8px;
-  font-weight:600;text-decoration:none;transition:0.3s;
+  font-weight:600;text-decoration:none;transition:0.3s;cursor:pointer;
+  box-shadow:0 0 15px #00BFFF;
 }
-.btn:hover{background:#0099ff;transform:scale(1.05);}
-.socials{margin-top:25px;display:flex;justify-content:center;gap:20px;}
-.socials a img{width:40px;height:40px;transition:0.3s;}
-.socials a img:hover{transform:scale(1.1);}
+.btn:hover{background:#0099ff;transform:scale(1.05);box-shadow:0 0 25px #00BFFF;}
+
+/* ===== POPUP ===== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  position: relative;
+  background: rgba(20,20,40,0.9);
+  padding: 60px 50px;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0,191,255,0.4);
+  animation: fadeIn 0.4s ease-out;
+  overflow: hidden;
+}
+.modal-content::before {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(0,191,255,0.4) 0%, rgba(0,191,255,0.05) 70%, transparent 100%);
+  transform: translate(-50%, -50%);
+  filter: blur(40px);
+  animation: glowPulse 3s infinite ease-in-out;
+  z-index: 0;
+}
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+}
+.modal .socials {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  z-index: 1;
+  position: relative;
+}
+.modal .socials a img{
+  width:60px;height:60px;
+  transition:0.3s;
+  filter:drop-shadow(0 0 10px #00BFFF);
+}
+.modal .socials a img:hover{
+  transform:scale(1.15);
+  filter:drop-shadow(0 0 20px #00BFFF);
+}
+.close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 2;
+}
+.close:hover { color: #00BFFF; }
+
+@keyframes fadeIn {
+  from {transform: scale(0.9); opacity: 0;}
+  to {transform: scale(1); opacity: 1;}
+}
 </style>
 </head>
 <body>
 <header>
-<img 
-  src="https://raw.githubusercontent.com/SannMiata/Kaminari/main/Kaminari%20E-%20Commerce%20.jpg" alt="Logo">
+  <img src="https://raw.githubusercontent.com/SannMiata/Kaminari/main/Kaminari%20E-%20Commerce%20.jpg" alt="Logo">
   <h1>Kaminari Store</h1>
 </header>
 
@@ -61,27 +157,35 @@ header h1{color:#00BFFF;text-shadow:0 0 10px #00BFFF;font-size:1.5em;}
     <p>Instalasi jaringan, troubleshooting, dan konsultasi IT untuk bisnis Anda.</p>
   </div>
 
-  <a href="#" class="btn">Hubungi Kami Sekarang</a>
-
-  <div class="socials">
-    <a href="https://instagram.com/namakamu" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
-    </a>
-    <a href="https://wa.me/628xxxxxxx" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
-    </a>
-    <a href="https://discord.gg/linkkamu" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" alt="Discord">
-    </a>
-  </div>
+  <button class="btn" id="openModal">Hubungi Kami Sekarang</button>
 </section>
-</body>
-</html>
 
-<footer>
+<!-- POPUP -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeModal">&times;</span>
+    <div class="socials">
+      <a href="https://www.instagram.com/_sannqc?igsh=MXRkN2xpdTNqZWcyaA==" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+      </a>
+      <a href="https://wa.me/6285600440081" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+      </a>
+      <a href="https://discord.gg/" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" alt="Discord">
+      </a>
+    </div>
+  </div>
+</div>
+
 <script>
-    // set tahun footer otomatis
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  const modal = document.getElementById('contactModal');
+  const btn = document.getElementById('openModal');
+  const close = document.getElementById('closeModal');
+
+  btn.onclick = () => modal.style.display = 'flex';
+  close.onclick = () => modal.style.display = 'none';
+  window.onclick = e => { if (e.target == modal) modal.style.display = 'none'; }
+</script>
 </body>
 </html>
