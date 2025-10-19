@@ -37,7 +37,7 @@ header h1{color:#00BFFF;text-shadow:0 0 10px #00BFFF;font-size:1.5em;}
 .socials a img{width:40px;height:40px;transition:0.3s;}
 .socials a img:hover{transform:scale(1.1);}
 
-/* === Popup (Modal) === */
+/* Modal */
 .modal {
   display: none;
   position: fixed;
@@ -61,7 +61,7 @@ header h1{color:#00BFFF;text-shadow:0 0 10px #00BFFF;font-size:1.5em;}
 .close { position:absolute; top:20px; right:25px; font-size:28px; color:#fff; cursor:pointer; }
 .close:hover { color:#00BFFF; }
 
-/* === COMMENT SECTION === */
+/* Comment Section */
 .comment-section {
   max-width: 800px;
   margin: 60px auto 40px;
@@ -87,7 +87,7 @@ header h1{color:#00BFFF;text-shadow:0 0 10px #00BFFF;font-size:1.5em;}
 .comment-item { background: rgba(255,255,255,0.08); padding:10px 15px; border-radius:8px; margin-bottom:10px; }
 .comment-item strong { color:#00BFFF; }
 
-/* === Visitor Counter === */
+/* Visitor Counter */
 .counter { text-align:center; margin-top:30px; font-size:1em; color:#bbb; }
 .counter span { color:#00BFFF; font-weight:bold; }
 
@@ -116,7 +116,7 @@ header h1{color:#00BFFF;text-shadow:0 0 10px #00BFFF;font-size:1.5em;}
   <button class="btn" id="openModal">Hubungi Kami Sekarang</button>
 </section>
 
-<!-- POPUP KONTAK -->
+<!-- Modal Kontak -->
 <div id="contactModal" class="modal">
   <div class="modal-content">
     <span class="close" id="closeModal">&times;</span>
@@ -135,7 +135,7 @@ header h1{color:#00BFFF;text-shadow:0 0 10px #00BFFF;font-size:1.5em;}
   </div>
 </div>
 
-<!-- COMMENT SECTION -->
+<!-- Comment Section -->
 <section class="comment-section">
   <h2>Kotak Komentar</h2>
   <div class="comment-box">
@@ -158,18 +158,18 @@ import { getDatabase, ref, onValue, push, set, runTransaction } from "https://ww
 const firebaseConfig = {
   apiKey: "AIzaSyCzqZCnBRrLIEJ0Izz1-laXaUFogjgkxYU",
   authDomain: "kaminari-store.firebaseapp.com",
-  projectId: "kaminari-store",
   databaseURL: "https://kaminari-store-default-rtdb.firebaseio.com",
+  projectId: "kaminari-store",
   storageBucket: "kaminari-store.firebasestorage.app",
   messagingSenderId: "627183025397",
   appId: "1:627183025397:web:724c6e9830151707c759bc"
 };
 
-// Init Firebase
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
-// === Modal ===
+// Modal
 const modal = document.getElementById('contactModal');
 const btn = document.getElementById('openModal');
 const close = document.getElementById('closeModal');
@@ -177,7 +177,14 @@ btn.onclick = () => modal.style.display = 'flex';
 close.onclick = () => modal.style.display = 'none';
 window.onclick = e => { if(e.target == modal) modal.style.display='none'; }
 
-// === Comment Section ===
+// Visitor Counter
+const visitorRef = ref(database, 'visitors');
+runTransaction(visitorRef, (current) => (current || 0) + 1)
+  .then(result => {
+    document.getElementById('visitorCount').innerText = result.snapshot.val();
+  });
+
+// Comments
 const commentList = document.getElementById('commentList');
 const submitBtn = document.getElementById('submitComment');
 const commentsRef = ref(database, 'comments');
@@ -198,4 +205,20 @@ submitBtn.addEventListener('click', () => {
   const text = document.getElementById('comment').value.trim();
   if(!name || !text) return alert('Nama dan komentar tidak boleh kosong!');
   const newCommentRef = push(commentsRef);
-  set(newCommentRef, { name,
+  set(newCommentRef, { name, text });
+  document.getElementById('name').value = '';
+  document.getElementById('comment').value = '';
+});
+</script>
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7LYTLR7RFP"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-7LYTLR7RFP');
+</script>
+
+</body>
+</html>
