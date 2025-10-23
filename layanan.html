@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
@@ -13,30 +13,61 @@ body{
   background:linear-gradient(135deg,#0f0f23,#1a1a2e);
   color:#fff;overflow-x:hidden;text-align:center;padding-top:90px;
 }
+
+/* 🔹 HEADER BARU */
 header {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: calc(15px + env(safe-area-inset-top)) 0 15px 0;
-  background: rgba(0, 0, 0, 0.8);
-  box-shadow: 0 0 20px #00BFFF;
+  gap: 12px;
+  padding: calc(10px + env(safe-area-inset-top)) 15px;
+  background: rgba(0, 0, 0, 0.85);
+  box-shadow: 0 0 25px #00BFFF;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 10;
+  backdrop-filter: blur(6px);
 }
-header img{width:40px;height:40px;border-radius:50%;}
-header h1{color:#00BFFF;text-shadow:0 0 10px #00BFFF;font-size:1.5em;}
+header img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #00BFFF;
+  box-shadow: 0 0 10px #00BFFF;
+  transition: transform 0.3s ease;
+}
+header img:hover {
+  transform: scale(1.1);
+}
+header h1 {
+  color: #00BFFF;
+  font-size: 1.6em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px #00BFFF, 0 0 20px #0088ff;
+  transition: text-shadow 0.3s ease;
+}
+header h1:hover {
+  text-shadow: 0 0 15px #00BFFF, 0 0 35px #00BFFF;
+}
+
+/* 🔹 KONTEN LAYANAN */
 .services{max-width:1100px;margin:auto;padding:40px 20px;}
 .service-card{
-  background:rgba(255,255,255,0.1);padding:35px 25px;margin-bottom:30px;
-  border-radius:12px;box-shadow:0 0 15px rgba(0,191,255,0.4);
+  background:rgba(255,255,255,0.1);
+  padding:35px 25px;
+  margin-bottom:30px;
+  border-radius:12px;
+  box-shadow:0 0 15px rgba(0,191,255,0.4);
   transition:transform .3s ease;
+  cursor:pointer;
 }
 .service-card:hover{transform:translateY(-8px);}
 .service-card h2{color:#00BFFF;margin-bottom:10px;font-size:1.8em;}
 .service-card p{color:#ddd;font-size:1em;line-height:1.5;}
+
+/* 🔹 Tombol */
 .btn{
   background:#00BFFF;color:#000;padding:12px 30px;border-radius:8px;
   font-weight:600;text-decoration:none;transition:0.3s;cursor:pointer;
@@ -45,7 +76,7 @@ header h1{color:#00BFFF;text-shadow:0 0 10px #00BFFF;font-size:1.5em;}
 .socials a img{width:40px;height:40px;transition:0.3s;}
 .socials a img:hover{transform:scale(1.1);}
 
-/* Modal */
+/* 🔹 Modal */
 .modal {
   display: none;
   position: fixed;
@@ -69,7 +100,7 @@ header h1{color:#00BFFF;text-shadow:0 0 10px #00BFFF;font-size:1.5em;}
 .close { position:absolute; top:20px; right:25px; font-size:28px; color:#fff; cursor:pointer; }
 .close:hover { color:#00BFFF; }
 
-/* Comment Section */
+/* 🔹 Komentar */
 .comment-section {
   max-width: 800px;
   margin: 60px auto 40px;
@@ -95,7 +126,7 @@ header h1{color:#00BFFF;text-shadow:0 0 10px #00BFFF;font-size:1.5em;}
 .comment-item { background: rgba(255,255,255,0.08); padding:10px 15px; border-radius:8px; margin-bottom:10px; }
 .comment-item strong { color:#00BFFF; }
 
-/* Visitor Counter */
+/* 🔹 Counter */
 .counter { text-align:center; margin-top:30px; font-size:1em; color:#bbb; }
 .counter span { color:#00BFFF; font-weight:bold; }
 
@@ -104,116 +135,14 @@ header h1{color:#00BFFF;text-shadow:0 0 10px #00BFFF;font-size:1.5em;}
 <body>
 
 <header>
-  <img src="https://raw.githubusercontent.com/SannMiata/Kaminari/main/Kaminari%20E-%20Commerce%20.jpg" alt="Logo">
+  <img src="https://raw.githubusercontent.com/SannMiata/Kaminari/main/Kaminari%20E-%20Commerce%20.jpg" alt="Logo Kaminari Store">
   <h1>Kaminari Store</h1>
 </header>
 
 <section class="services">
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Layanan - Kaminari Store</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:'Poppins',sans-serif;
-  background:linear-gradient(135deg,#0f0f23,#1a1a2e);
-  color:#fff;overflow-x:hidden;text-align:center;padding-top:90px;
-}
-header{
-  display:flex;align-items:center;justify-content:center;
-  gap:10px;padding:15px 0;background:rgba(0,0,0,0.8);
-  box-shadow:0 0 20px #00BFFF;position:fixed;top:0;width:100%;z-index:10;
-}
-header img{width:40px;height:40px;border-radius:50%;}
-header h1{color:#00BFFF;text-shadow:0 0 10px #00BFFF;font-size:1.5em;}
-.services{max-width:1100px;margin:auto;padding:40px 20px;}
-.service-card{
-  background:rgba(255,255,255,0.1);padding:35px 25px;margin-bottom:30px;
-  border-radius:12px;box-shadow:0 0 15px rgba(0,191,255,0.4);
-  transition:transform .3s ease;
-}
-.service-card:hover{transform:translateY(-8px);}
-.service-card h2{color:#00BFFF;margin-bottom:10px;font-size:1.8em;}
-.service-card p{color:#ddd;font-size:1em;line-height:1.5;}
-.btn{
-  background:#00BFFF;color:#000;padding:12px 30px;border-radius:8px;
-  font-weight:600;text-decoration:none;transition:0.3s;cursor:pointer;
-}
-.btn:hover{background:#0099ff;transform:scale(1.05);}
-.socials a img{width:40px;height:40px;transition:0.3s;}
-.socials a img:hover{transform:scale(1.1);}
-
-/* Modal */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 100;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.6);
-  justify-content: center;
-  align-items: center;
-}
-.modal-content {
-  background: rgba(20,20,40,0.95);
-  padding: 30px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 0 20px #00BFFF;
-  position: relative;
-}
-.modal h2 { color: #00BFFF; margin-bottom: 20px; }
-.modal .socials { display:flex; justify-content:center; gap:25px; margin-top:10px; }
-.close { position:absolute; top:20px; right:25px; font-size:28px; color:#fff; cursor:pointer; }
-.close:hover { color:#00BFFF; }
-
-/* Comment Section */
-.comment-section {
-  max-width: 800px;
-  margin: 60px auto 40px;
-  background: rgba(255,255,255,0.08);
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,191,255,0.3);
-  text-align: left;
-}
-.comment-section h2 { color: #00BFFF; text-align:center; margin-bottom:20px; }
-.comment-box { width:100%; margin-bottom:15px; }
-.comment-box input, .comment-box textarea {
-  width:100%; padding:10px; border-radius:8px; border:none; outline:none; margin-bottom:10px;
-  font-family:'Poppins', sans-serif;
-}
-.comment-box textarea { height:80px; resize:none; }
-.comment-box button {
-  background:#00BFFF; color:#000; border:none; padding:10px 25px; border-radius:8px;
-  font-weight:600; cursor:pointer; transition:0.3s;
-}
-.comment-box button:hover { background:#0099ff; transform:scale(1.05); }
-.comment-list { margin-top:25px; max-height:250px; overflow-y:auto; }
-.comment-item { background: rgba(255,255,255,0.08); padding:10px 15px; border-radius:8px; margin-bottom:10px; }
-.comment-item strong { color:#00BFFF; }
-
-/* Visitor Counter */
-.counter { text-align:center; margin-top:30px; font-size:1em; color:#bbb; }
-.counter span { color:#00BFFF; font-weight:bold; }
-
-</style>
-</head>
-<body>
-
-<header>
-  <img src="https://raw.githubusercontent.com/SannMiata/Kaminari/main/Kaminari%20E-%20Commerce%20.jpg" alt="Logo">
-  <h1>Kaminari Store</h1>
-</header>
-<section class="services"> <h2 style="margin-bottom:25px;color:#fff;font-weight:700;text-shadow:0 0 10px #00BFFF;">
+  <h2 style="margin-bottom:25px;color:#fff;font-weight:700;text-shadow:0 0 10px #00BFFF;">
     Klik di bawah untuk <span style="color:#00BFFF">Cek harga dan detail produk</span>
   </h2>
-  
 
   <div class="service-card" onclick="window.location.href='topup.html'">
     <h2>Top Up</h2>
@@ -233,11 +162,11 @@ header h1{color:#00BFFF;text-shadow:0 0 10px #00BFFF;font-size:1.5em;}
   <button class="btn" id="openModal">Hubungi Kami Sekarang</button>
 </section>
 
-<!-- Modal Kontak -->
+<!-- 🔹 Modal Kontak -->
 <div id="contactModal" class="modal">
   <div class="modal-content">
     <span class="close" id="closeModal">&times;</span>
-    <h2>Duarr</h2>
+    <h2>Hubungi Kami</h2>
     <div class="socials">
       <a href="https://www.instagram.com/_sannqc?igsh=MXRkN2xpdTNqZWcyaA==" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
@@ -252,7 +181,7 @@ header h1{color:#00BFFF;text-shadow:0 0 10px #00BFFF;font-size:1.5em;}
   </div>
 </div>
 
-<!-- Comment Section -->
+<!-- 🔹 Komentar -->
 <section class="comment-section">
   <h2>Kotak Komentar</h2>
   <div class="comment-box">
@@ -266,12 +195,11 @@ header h1{color:#00BFFF;text-shadow:0 0 10px #00BFFF;font-size:1.5em;}
   </div>
 </section>
 
-<!-- Firebase Module -->
+<!-- 🔹 Firebase -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
 import { getDatabase, ref, onValue, push, set, runTransaction } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-database.js";
 
-// Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyCzqZCnBRrLIEJ0Izz1-laXaUFogjgkxYU",
   authDomain: "kaminari-store.firebaseapp.com",
@@ -282,7 +210,6 @@ const firebaseConfig = {
   appId: "1:627183025397:web:724c6e9830151707c759bc"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
@@ -328,7 +255,7 @@ submitBtn.addEventListener('click', () => {
 });
 </script>
 
-<!-- Google Analytics 4 -->
+<!-- 🔹 Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7LYTLR7RFP"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
